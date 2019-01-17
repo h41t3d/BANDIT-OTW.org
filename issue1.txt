@@ -1,0 +1,32 @@
+OVERTHEWIRE,org {BANDIT}
+
+1. connect to bandit.labs.overthewire.org using ssh as :-
+
+# ssh bandit0@bandit.labs.overthewire.org -p 2220
+then enter the password to login.
+
+how it works.....
+ssh is a protocol which provides command line access or remote access to any host recognisable.
+syntax --> ssh username@hostdomain -p <port if available> 
+
+2. password for bandit1 is in the file readme in home dir, 
+
+$ ls 
+readme 
+$ cat readme
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+how it works.........
+ls : lists all the files existing in the directory we are currently in.
+cat : simply displays contents if the file invoked {not the best way}. 
+
+<!-- initial username and password for bandit.labs.overthewire.org
+--> username : bandit0 and
+--> password : bandit0
+bandit1 username and password for bandit.labs.overthewire.org
+--> username : bandit1 and
+--> password : boJ9jbbUNNfktd78OOpsqOltutMc3MY1 ..!>
+
+
+FIN
+
