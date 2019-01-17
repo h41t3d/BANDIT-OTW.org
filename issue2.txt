@@ -1,0 +1,23 @@
+OVERTHEWIRE.org {BANDIT}
+
+currently we are in bandit0 login now when we have our bandit1 login creds, we can login in the bandit1 account....
+
+# ssh bandit1@bandit.labs.overthewire.org -p 2220
+then enter the password to login.
+
+username --> bandit1
+password --> boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+OK, now for new password we have a file named "-"
+this time simply "cat" file wont work as it reads it as some additionnal param is being fed with "cat" command
+
+$ cat -
+{wont work clearly}
+$ cat <full file path to password containing thing>
+$ cat /home/bandit1/-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+YAY!!!
+
+username --> bandit2 
+password --> CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
