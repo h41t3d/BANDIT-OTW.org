@@ -1,0 +1,24 @@
+BANDIT OVERTHEWIRE.org issue4
+
+next task is to find password in directory "inhere/" in bandit3 account
+
+# ssh bandit3@bandit.labs.overthewire.org -p 2220
+# UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+$ ls
+inhere
+$ cd inhere
+~/inhere$ ls
+~/inhere$  
+
+ls command in inhere directory dont reveal anything literally, but maybe the content is hidden then list the hidden file like:
+
+~/inhere$ ls -a
+. .. .hidden
+~/inhere$ cat .hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+file was indeed hidden, only needed the name of the file and here we are with "catting" the file and obtaining the password.
+
+username --> bandit4
+password --> pIwrPrtPN36QITSp3EQaw936yaFoFgAB
