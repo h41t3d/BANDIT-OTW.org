@@ -1,0 +1,21 @@
+BANDIT OVERTHEWIRE.org issue3
+
+right now we are logged in as bandit2, and next task is to gain password from the file "spaces in this filename"
+in this we cant simply "cat" out the file as it takes spaces sperated words as different file names hence,
+
+# cat spaces in this file namea
+{this wont work clearly}
+
+Now, to do this as mostly we use the bash and ssh terminal for interpreting and run scripts, this interpreter contain a simple escape element 
+which tends to make the next character to it invisible to the interpreter or processor.
+escaping or skip element : "\"
+any character next to "\" is not carried out by the compiler, application of this here is we use it as to skip spaces " " between the file 
+name like:
+
+$ cat spaces\ in\ this\ filename
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+or simply write "cat" and spaces and press tab for autocompletion.
+
+username --> bandit3
+password --> UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
