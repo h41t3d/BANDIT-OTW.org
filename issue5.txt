@@ -1,0 +1,61 @@
+BANDIT ISSUE5 OVERTHEWIRE  
+
+make your way into the inhere directory like:
+
+$ cd inhere 
+~/inhere$ ls
+-file00  -file01  -file02  -file03  -file04  -file05  -file06  -file07  -file08  -file09
+
+this directory contains literally many data files, moreover if we try to access the files as it is, that wont work bexause of the "-" in the
+way..... also "\" is of no use because of parameter invokation.
+
+write "find", find finds the files currently residing in the directory hierarchy
+
+~/inhere$ find 
+.
+./-file09
+./-file06
+./-file01
+./-file02
+./-file05
+./-file03
+./-file08
+./-file07
+./-file04
+./-file00
+
+this gives us a way to access any file in the directory as: 
+
+~/inhere$ cat ./-file00
+����������~%	C[�걱>��| � 
+
+catting like this gives gibberish, as these characters arent supposed to catted out like this, so now as we can access the files in the dir
+lets see their file type like:
+ 
+~/inhere$ file ./-file00
+data
+
+to filing all the files at once ,
+
+~/inhere$ file ./-* or
+~/inhere$ file ./*
+./-file00: data
+./-file01: data
+./-file02: data
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+
+here clearly file07 contains ASCII text, that must be our password soooooooooooo
+
+~/inhere$ cat ./-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+yay!
+
+username --> bandit5 
+password --> koReBOKuIDDepwhWk7jZC0RTdopnAYKh
