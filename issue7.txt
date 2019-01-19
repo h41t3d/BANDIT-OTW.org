@@ -1,0 +1,104 @@
+ISSUE7 BANDIT OVERTHEWIRE-org
+
+as we are currently in bandit6 account and given for next password is :: 
+
+The password for the next level is stored somewhere on the server and has all of the following properties:
+
+owned by user bandit7
+owned by group bandit6
+33 bytes in size
+
+lets, first analyze the given part >
+
+1. the file user is "bandit7" means, the user is the acccount holder whose password we have to find.
+2. the file group is "bandit6" means, file is grouped containing bandit6 as the member of the group.
+3. file size is 33, pretty much self explanatory
+
+now, first lets list the contents of the account bandit6  
+
+$ ls
+$
+
+there isnt any showable directory in this account, and question states "somewhere on the server" so,
+lets do find and see what so we have,
+
+$ find
+.
+./.bash_logout
+./.profile
+./.bashrc
+
+these files are not real directories, although they contains data but passsword isnt there surely, {server files mainly}
+
+to learn about "find" command more lets man it and see what we have,
+ 
+$ man find
+
+the required details we want to know are : -user, -group, -size. as their name suggests they can be initialised as user, group, and size of
+the files we need.
+
+syntax : lets find a file from whole server(not only the account) whose size is 33 bytes and user is bandit7 and group is bandit6
+
+$ find / -size 33c -user bandit7 -group bandit6
+find: ‘/run/lvm’: Permission denied
+find: ‘/run/screen/S-bandit0’: Permission denied
+find: ‘/run/screen/S-bandit19’: Permission denied
+find: ‘/run/screen/S-bandit13’: Permission denied
+find: ‘/run/screen/S-bandit14’: Permission denied
+find: ‘/run/screen/S-bandit23’: Permission denied
+find: ‘/run/screen/S-bandit24’: Permission denied
+find: ‘/run/screen/S-bandit5’: Permission denied
+find: ‘/run/screen/S-bandit25’: Permission denied
+find: ‘/run/screen/S-bandit20’: Permission denied
+find: ‘/run/screen/S-bandit21’: Permission denied
+find: ‘/run/shm’: Permission denied
+find: ‘/run/lock/lvm’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/log’: Permission denied
+find: ‘/var/tmp’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/cgroup2/csessions’: Permission denied
+find: ‘/home/bandit28-git’: Permission denied
+find: ‘/home/bandit30-git’: Permission denied
+find: ‘/home/bandit31-git’: Permission denied
+find: ‘/home/bandit5/inhere’: Permission denied
+find: ‘/home/bandit27-git’: Permission denied
+find: ‘/home/bandit29-git’: Permission denied
+find: ‘/tmp’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/etc/lvm/backup’: Permission denied
+find: ‘/etc/lvm/archive’: Permission denied
+find: ‘/etc/polkit-1/localauthority’: Permission denied
+find: ‘/sys/fs/pstore’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/31900/task/31900/fd/6’: No such file or directory
+find: ‘/proc/31900/task/31900/fdinfo/6’: No such file or directory
+find: ‘/proc/31900/fd/5’: No such file or directory
+find: ‘/proc/31900/fdinfo/5’: No such file or directory
+find: ‘/boot/lost+found’: Permission denied
+
+we get these files and almost all are out of our scope or isnt a directory, on a closer look file /var/lib/dpkg/info/bandit7.password is 
+accessible to us hence,
+ 
+$ file /var/lib/dpkg/info/bandit7.password
+/var/lib/dpkg/info/bandit7.password: ASCII text
+
+hence its a readable file and password must be there.
+
+$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+hence we got our password yay!
+
+username --> bandit7
+password --> HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+
+
