@@ -1,0 +1,133 @@
+issue9 bandit overthewire.org
+
+RN{right now} we are in bandit8 acc.
+
+given problem statement : 
+
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+easy huh! 
+
+lets list the contents of the directory (base directory /home/bandit8)
+
+$ ls
+data.txt
+
+if we "cat" or "nano" this file we obtain passowrd looking ascii strings occuring kind of 1041 times throughout, and password is the one which
+is repeated only once.
+
+use: sort command for sort the entries from start to end in order.
+and: uniq command for extracting the simgle unique entry in the file.
+ 
+$ cat data.txt | sort | uniq -u 
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+ 
+or can use this to count entries repeatition number,
+
+$ cat data.txt | sort | uniq -c 
+     10 07iR6PwHwihvQ3av1fqoRjICCulpoyms
+     10 0ob6rCn4D4jQ6KCiaT5hmOdWFrm2quR1
+     10 1drBmDT7PYS7hVgoTWkJSjUZUK7ZAIAa
+     10 1JnkIYLDOdn5M7TGabYxOWkn7HazMjYW
+     10 1wBrW0VGjKeYiXltbEWrUipwSHQfTu44
+     10 2Dxbtw8cnKyHwvt0lfFNYOGc4cE59uua
+     10 2TRkCQhbMjcM0hwL31NnJQ0DVagWN3Ca
+     10 4c7EsUtqLnLR9hiepV5EQVhdMgyi8onL
+     10 4cQDXE4IPH8fCBUBZaTPgnY2gwnPnlj6
+     10 6495bfC0lI1Qkw5kzZHnbVWooaOZHLvj
+     10 6rEzM4Qro8dH0e3uemAyYseTiNiNAYap
+     10 78rgduVcLZjLzZmooObdaN541MKV6IfQ
+     10 8qkrbCAUG9I28M49j9flUro5fWxenFzF
+     10 aIl4xN5maZVCQITz0xH0KNXIlLc0MhNf
+     10 aPsCQmSWVYGQQHUD6k1fHC2kqSyMlxwV
+     10 awglWaTRSAWBcol8hSMTJP4FYhIGJHVO
+     10 bCJdTkork5IRbZaaPZK0WVPgYIIO4mHF
+     10 BPl0XNou7xAZAI5fdzWzSmPkW1PnvTE1
+     10 bvIaDTzHBOGSO7CfpH9vUrJRRlwYTUA7
+     10 CS8HVrDmKGLG53qziqQCLWNRlUP1FHsV
+     10 CwwHDVp0pO6zmFp87L9AtFzqU5aB5j9w
+     10 CyziIvGRdotoy9yA00RAnvvkvrYdKCPp
+     10 DRqDxJYAv7IUfAMmrXtXEiz63TUjqeDn
+     10 DXI6y5CNPU06rVpkoZgnZJBWfkdW131j
+     10 enNw6tuj8mSxxS7f2Yd05puXVeuCZ39G
+     10 ewllxPExW9eaHxAH8WZkW9lDuK5cZcUy
+     10 eyKcuNPKnjt25kaOZxkMYQ9xqp45aIk9
+     10 fIBXc239DbhORY4t9xjgi7fSm4thHsIb
+     10 fiK30QpqzoULACXZwkBEKJZvpPQx9Uqm
+     10 FlHOKVUDNLx6Ga7CxC4ISRYNflN1GAnF
+     10 G4BHP66B4l3XkvB05CMgzrEKyjHhuCwz
+     10 gCx35PlKn08nrFFrAgHYLrUVWWZjLdqM
+     10 GEzwi36aKB8PLlCPH2wzl9gHzVm97IYu
+     10 glONDdR72FJL3Gc03nVNO4PKNzXFGH1A
+     10 gqGBgY1IdFDGG2XzB2o1VNGY4j6OL76V
+     10 h7jtcUsBhrryyLhtt1mT6Jdmp0l6ozBs
+     10 HKryX0XX2HT4WBT0OUzRz5Ac5B2rvIHU
+     10 iM3PaCO3VAxAdbdVsdGtEwuwrFQPYJV7
+     10 irGm6F73sbUrFhHukhp6JXgMQyLxJTz1
+     10 jtNdk5KDgrMkxgbZSJOvjOcM58svrzDY
+     10 jVscZ5eK5DWN7IvDSehXmyplCXRSbHJS
+     10 KerqNiDbY0zV2VxnOCmWX5XWxumldlAe
+     10 kha3sCpHsydUNrxLLXV3cFqWyucGjdxr
+     10 kt1VUEZpimCS4BaoAvhN3rgHOmhqaMIR
+     10 KUzqHCrxHSpgfkF5ZAzUfjlBaXW3zIaZ
+     10 L0nxAwlfV9V3J5onKIT8KYQ9InTcQ7yE
+     10 lnB8MWOYjETxoC8bQYrMFnxxQXAWHjP4
+     10 lZ9DhnzeHgIuLqYPmNzONpMCkuBYoeJI
+     10 M8JMUd7MSd4mOwZj1843ejBH5RXJOloa
+     10 mdug9JbW836YVZh3ALULBAxODlinqonJ
+     10 MIpMch66sYTmmqepKYczlRA9aJrnkt68
+     10 MpAqsgjJIVLT1MxSZcRoOOzl6g1db98Q
+     10 MQrydyojsVIYJSY8y1nCMjZGxnL1My7F
+     10 MsxcvOe3PGrt78wpZG2bBNF5wfXpZhET
+     10 n5fEmvCXKbJErzIDt3MLTmZZVMRNynrR
+     10 NL91hwGrqW5lVgoicb592Sd0djnHnbjZ
+     10 Nnih4Q0jf3xEOTcmM3yw2HkOm3VPox0w
+     10 NT4p09XwRb0k0wG9yIuvfs3MblMGpMc1
+     10 nU5zbsdUfmzv7cjNwkV9Hgb65OVe5EDt
+     10 nyvBweoC3kzt5QRTjbDfrWO7jhwOGN4g
+     10 OcVxHzDW027KWNFS03G31KQEb5TgN1WV
+     10 peXkYozDKE2u2BEOed5vvkY0nyjkGawn
+     10 PXHEt0PztCiArDZ7UCBmqKdBCiXNQWBN
+     10 QmFayGbrzFoiQ5Z2PGmnD2N6Pf77cxl9
+     10 QNTac9UtCmQ5VGAnzj10Z9BwV4TuaVvu
+     10 qsbKthWb80f3vQKBP7O12SjfFo1V5VkL
+     10 quhCb8ZIUJXXM2SbY1ER1D5GaDlQjdDa
+     10 QYeOFhgJCJEfKM1ZpT0K322R6SuKdCFT
+     10 r0VIMA1yzv838m7UfvutUhCf0zaY3Rqw
+     10 rfUNSGOvmQXz0m7PtFoEoPg1BpTbll7X
+     10 rJMbGeeDTMsj1RA4YibIQr0o9azHgP0I
+     10 rQAYnkKAXIViP4ROmehnDMIAXLpOOLEp
+     10 sBB2H7HateUFxr2oxrqUVoumFM60f1lj
+     10 SjFHXKRcIc7jlAYGknVMnGXSFd6xRmnF
+     10 tDZbF2SuhsvfaA3eTnwfcjQa1pZoPJeX
+     10 tiyVGzZcRwUPVAiqkroFMUbMI9ut9hcT
+     10 tLKyRATtoCuxMR4zZg1Dnlnr3je3bSHe
+     10 tmzBM5rcV9y7AM1xDHudL2yX9oefGieT
+     10 tWwjd16fG17vGdjutfOygVTjEGxlijOS
+     10 uBRx9inQTeaDZAuzEb2MadWXmkH8uW4O
+      1 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+     10 vBo3qbjNEF2d3meGEkRfc3mKpjtiDz1i
+     10 VElUBEIhJ4yBgOBSN05WgtV2rF6kkGdz
+     10 vl9liaz8TKv1enUi0S2REhn01hKjjFIK
+     10 vVwG2mb8rU8eCuIlBhCJrZJ4GWR35nWY
+     10 W0vbGkT5mfRVWHAXCcMekevbenMJHFhN
+     10 W6pn7siBPh5G6ndjv1xx26iHxke8PviX
+     10 WaKxNQhiI9dXwvzB1PMpbQRy4CutGrWt
+     10 WbfstqfIvgiEuCVVuxwLgLyzUMtho2jP
+     10 WBjoFnis277W9vWB8M67h3z1glOYG2Fy
+     10 wSpAMdiBSeywE4d1DQZoSp5o8ZVOCqGP
+     10 wWfTfhYKmBkmyGH9D6Qjb6x7bMt5narC
+     10 x0bga8Oxz5lgM8k52HrYy4ez7XJI0lM0
+     10 XURYdoIx95clq6s90MORDydQ187DxQhS
+     10 xWmqkcrZ7TmjE7LKjqHVXSLw9fqsjYXp
+     10 XWy99VXVCnwdr780PK86hP6rBMkV5E3n
+     10 y9sn56N0ZhyxaySYRs518D4vqkMShHwb
+     10 YiQvaaidmD39i0ryGZz97Upc5NjgPklY
+     10 YR0sflfJZ34iuY3wM3DNNO19dBYnJDmt
+     10 yXGLvp7UaeiDKxLGXQYlWuRWdIgeCaT0
+     10 YzZX7E35vOa6IQ9SRUGdlEpyaiyjvWXE
+
+sorting before "uniquing" the records is nessasary as it takes pre to post approach to scan through records consecutively. :/
+
+username --> bandit9
+password --> UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
