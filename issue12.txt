@@ -1,0 +1,37 @@
+issue12 BANDIT OVERTHEWIRE.org 
+
+logged in account right now :: bandit11
+
+given problem statement :: 
+
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13
+positions.
+
+first list out the files in the directory.
+
+$ ls
+data.txt 
+
+lets cat out ::
+
+$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+
+for rotation use "tr" command for refferencing the startup and end of the rotation in alphabetical order as... rotation means replacing the 
+character with a character next 13 places in ascii list.
+
+syntax for "tr" :: tr 'alphabet criterion' 'change to alphabet'
+
+$ ls
+data.txt
+$ cat data.txt | tr 'A-Za-Z' 'N-ZA-Mn-za-m'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+or
+$ cat data.txt | tr 'A-MN-Za-mn-z' 'N-ZA-Mn-za-m'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+
+yay !!
+
+username --> bandit12
+password --> 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
