@@ -1,0 +1,28 @@
+issue11 BANDIT OVERTHEWIRE.org 
+
+logged account :: bandit10 
+
+given problem statement :: 
+
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+lets list and cat the data file in terminal.
+
+$ ls 
+data.txt
+$ cat data.txt
+VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
+
+use base64 command to decode the string,
+
+$ cat data.txt | base64 -d 
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+or 
+$ cat data.txt | base64 --decode
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+
+yay! 
+
+username --> bandit11 
+password --> IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
