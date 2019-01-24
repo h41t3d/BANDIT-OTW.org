@@ -1,0 +1,92 @@
+ISSUE16 BANDIT overthewire.org
+
+curretnly logged in as :: bandit15
+
+given prob. ::
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL 
+encryption.
+Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ 
+and ‘Q’, the ‘B’ command also works in this version of that command…
+
+again,, using openssl command because "ssl" encryption like ::
+ 
+$ cat /etc/bandit_pass/bandit15 | openssl s_client -connect localhost:30001 -ign_eof
+CONNECTED(00000003)
+depth=0 CN = localhost
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=localhost
+   i:/CN=localhost
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICBjCCAW+gAwIBAgIENHv1njANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
+b2NhbGhvc3QwHhcNMTkwMTEzMTkzNDMwWhcNMjAwMTEzMTkzNDMwWjAUMRIwEAYD
+VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALOkCuqD
+hi2X8nQ1Fu/p2hHx+3SeORNWt76H7Q/Wr8ZYapwViACu7h/d+Gn1Z4/1ZVN5Ukz3
+fiS7UiA73eJg2iLo9rXzPw01hVB+IA4RtSTBmsUm7vwIgNDv5RsrYLl6JCGaZ+ns
+/z5ihBHILWT3zvLyAn98HUiVAjAahiuwBtHxAgMBAAGjZTBjMBQGA1UdEQQNMAuC
+CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
+ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
+DQEBBQUAA4GBABiUJgikW8Ig5kuqkB3VCZiACRm5bsC4T5EH531RtzDi6Yywnqm3
+xDbfWzLIoWpVq2U2pViIVsPmQ6nGjASQSlQhxsg9kZBaqYB26AcgrmbVIruywtij
+JXvZkb10yrXeqtfK5bO8+kILa8XSBVbIXQ55Cn4HiHE7NtDZBOLBTl2/
+-----END CERTIFICATE-----
+subject=/CN=localhost
+issuer=/CN=localhost
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 1019 bytes and written 269 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: D646F4F58B420B4CAD258E1D1CEFAF0749C94A72D0519CC769AC345C4F092BCB
+    Session-ID-ctx: 
+    Master-Key: A16D55921E9FFE4A26E5934C289620C08DEB95E9DA109B787C74260B3B0720815E4D1D9D0D92B465F9875E49E5BFBF10
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - 32 a4 5b 29 4b c8 06 db-a5 7e c7 95 4f fd c4 c1   2.[)K....~..O...
+    0010 - d7 45 56 a8 29 85 d5 48-0a b8 f9 9b 2c b8 c8 a6   .EV.)..H....,...
+    0020 - a1 bf db 37 7b 32 92 60-69 e0 a2 16 2d 74 9a fd   ...7{2.`i...-t..
+    0030 - 15 4e 86 f5 c6 ab 50 1e-0f 59 ab 31 a5 32 57 67   .N....P..Y.1.2Wg
+    0040 - 56 b7 44 71 94 33 e8 7b-4b 2f dd 59 8a d5 25 d3   V.Dq.3.{K/.Y..%.
+    0050 - 4c bd d8 e4 2e 6f 57 cc-1a e6 d2 1f 0c 13 1f e8   L....oW.........
+    0060 - 6f a8 af 88 4b c3 d7 f4-b8 af bc ff d5 f1 14 2e   o...K...........
+    0070 - 69 3b 63 ef 28 ed 24 d8-00 ce a1 4d a6 65 60 43   i;c.(.$....M.e`C
+    0080 - b1 c4 13 9f df 02 52 84-7f 5f ff 77 af 71 63 8d   ......R.._.w.qc.
+    0090 - 42 4a 1e 14 4d dd 21 55-a6 70 a2 6a 92 3e 0b fa   BJ..M.!U.p.j.>..
+
+    Start Time: 1548311374
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+closed
+
+fin.
+
+username --> bandit16
+password --> cluFn7wTiGryunymYOu4RcffSxQluehd
+
