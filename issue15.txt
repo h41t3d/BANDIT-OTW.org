@@ -1,0 +1,17 @@
+ISSUE15 BANDIT OVERTHEWIRE.org
+
+currently logged in as :: bandit14
+
+given statement :: 
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost
+
+simple netcat tcp/udp connection problem,
+here we have to pass the password so password comes first and then the "nc" statement
+
+$ cat /etc/bandit_pass/bandit14 | nc localhost 30000
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+username --> bandit15
+password --> BfMYroe26WYalil77FoDi9qh59eK5xNr
