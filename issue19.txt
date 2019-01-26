@@ -1,0 +1,16 @@
+ISSUE19 BANDIT OVERTHEWIRE.org
+
+we cant login right now so.... just pass the "cat" coommand in the ssh command and provide the password to find the password for bandit19.
+
+# ssh bandit18@bandit.labs.overthewire.org -p2220 "cat readme" 
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit18@bandit.labs.overthewire.org's password: 
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+readme was the file containing the password.
+
+YAY!
+
+username --> bandit19
+password --> IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
