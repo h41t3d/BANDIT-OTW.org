@@ -1,0 +1,27 @@
+ISSUE18 BANDIT OVERTHEWIRE.org
+
+currently logged in as :: bandit17
+
+problem statement ::
+
+There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only 
+line that has been changed between passwords.old and passwords.new
+NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
+
+it is a rather simple question,
+just use "diff" command to differentiate between files line by line.
+
+$ diff passwords.old passwords.new
+42c42
+< hlbSBPAWJmL6WFDb06gpTx1pPButblOA
+---
+> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+text with greater than bracket (>) is the password.
+
+
+YAY!
+
+
+username --> bandit18
+password --> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
