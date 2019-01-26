@@ -1,0 +1,34 @@
+ISSUE21 BANDIT OVERTHEWIRE.org 
+
+currently logged in as :: bandit20
+
+given problem :: 
+
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a 
+commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If 
+the password is correct, it will transmit the password for the next level (bandit21).
+
+NOTE: Try connecting to your own network daemon to see if it works as you think
+
+so we have to connect to some port and we also have to pass the password, also the binary only accepts one argument i.e: port number.
+binary reads the text from the "connection" means TCP/UDP.
+
+we need 2 terminal to logged in bandit20 in which one of em runs the binary and one of em sends the passwords to the binary and to set 
+listner on the specified port, using netcat "nc" to setup a listner and passing the password so.
+
+$ nc -lvp 7777 
+listening on [any] 7777 ...
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+connect to [127.0.0.1] from localhost [127.0.0.1] 47890
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+while this happens in other terminal run the program,
+as,
+$ ./suconnect 7777
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+
+sends back and b00m.... fin
+
+username --> bandit21
+password --> gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
