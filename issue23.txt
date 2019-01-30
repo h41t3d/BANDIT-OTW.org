@@ -1,0 +1,40 @@
+ISSUE23 BANDIT OVERTHEWIRE.org
+
+currently logged in as :: bandit22
+
+statement :: 
+
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration 
+and see what command is being executed.
+NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. 
+If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+so lets head to the script..
+
+$ cat /usr/etc/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+this script simply takes "bandit22" and md5sums a strings and saves the crypto as a file name and saves the file in that.
+
+to bypass simply execute the script.
+
+$ sh /usr/etc/cronjob_bandit23.sh
+Copying passwordfile /etc/bandit_pass/bandit22 to /tmp/8169b67bd894ddbb4412f91573b38db3
+
+cat it out 
+
+$ cat /tmp/8169b67bd894ddbb4412f91573b38db3
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+fin
+
+username --> bandit23 
+password --> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
