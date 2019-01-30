@@ -1,0 +1,45 @@
+ISSUE22 BANDIT OVERTHEWIRE.org
+
+currently logged in as :: bandit21
+
+given problem statement ::
+ 
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration 
+and see what command is being executed.
+
+"cron" is a job scheduling thing which makes some script execute every once in a while, lets change directory to the given directory..
+
+$ cd /etc/crom.d/
+/etc/cron.d/$ ls
+cronjob_bandit22  cronjob_bandit23  cronjob_bandit24
+
+we want pass for the bandit22 so just cat out the cronjob..
+
+/etc/cron.d$ cat cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
+these "*" means that all the time combinations are accepted and the job is done every time.
+lets see the script/document that is being executed.
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+change directory to the ".sh" file.
+
+$ cd /usr/bin
+/usr/bin$ cat cronjob_bandit22.sh
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+this is bash script that chmod's the file "/tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv", 644 in the param means that files are readable and 
+writeable by the owner of the file and readable by users in the group owner of that file and readable by everyone else.
+
+and the output of the file /etc/bandit_pass/bandit22 is injected in the file /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv sooooo se simply cat out
+the path to the file i.e: "/tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv"
+
+$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+easy!!
+
+username --> bandit22 
+password --> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
