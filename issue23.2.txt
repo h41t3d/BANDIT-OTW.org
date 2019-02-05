@@ -1,0 +1,21 @@
+ISSUE23 V.2.0 BANDIT OVERTHEWIRE.org
+
+ok so issue 23 was wrong as, if u tried u'll know soo.....
+
+when we saw the script all we have to do was that change the var. :: whoami to bandit23,
+and the script was wants higher priv. to edit the scripts so we cant edit the oirginal 
+script and cant use a new one bcz of bandit23_pass cant be accesed by the babndit22 user
+
+what we do is "string formatting" like just change the $whoami in the assigning part to
+bandit23 and we'll get the hash which can be printed with cat in the tmp folder.
+
+/usr/bin$ mytarget=$(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)
+/usr/bin$ echo $mytarget 
+8ca319486bfbbc3663ea0fbe81326349
+usr/bin$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+here we got that... 
+
+username --> bandit23 
+password --> jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
