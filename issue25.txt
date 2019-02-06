@@ -1,0 +1,21 @@
+ISSUE25 BANDIT OVERTHEWIRE.org 
+
+currently logged in as :: bandit24 
+
+create a bash script containing a for loop which is iterating all the combinations and 
+giving output as 
+
+"UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ" $i 
+
+here, $i goes from 0000 to 9999
+
+do save the output in the file like :: 
+
+echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ" $i > pass.txt
+
+then cat the file with piping it with netcat on 30002
+
+cat pass.txt | nc localhost 30002
+
+username --> bandit25 
+password --> uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
