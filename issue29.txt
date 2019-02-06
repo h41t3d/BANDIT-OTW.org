@@ -1,0 +1,11 @@
+ISSUE29 BANDIT OVERTHEWIRE.org 
+
+current :: bandit28
+
+clone the repo
+cat README.md
+git log 
+git show <sha1 hashes>
+
+username --> bandit29
+password --> bbc96594b4e001778eee9975372716b2
