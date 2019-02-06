@@ -1,0 +1,13 @@
+ISSUE27 BANDIT OVERTHEWIRE.org
+
+currently logged in as :: bandit25 
+
+do same as to find pass for bandit26 
+in the vim set the shell to /bin/bash
+and execute shell <enter>
+
+then ls 
+and from setuid binary cat the file /etc/bandit_pass/bandit27
+
+username --> bandit27
+password --> 3ba3118a22e93127a4ed485be72ef5ea
