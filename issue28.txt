@@ -1,0 +1,8 @@
+ISSUE28 BANDIT OVERTHEWIRE.org
+
+current :: bandit27 
+
+make a tmp folder and git clone the link in that, cd repo and cat README
+
+username --> bandit28 
+password --> 0ef186ac70e04ea33b4c1853d2526fa2
