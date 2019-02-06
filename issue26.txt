@@ -1,0 +1,20 @@
+ISSUE26 BANDIT OVERTHEWIRE.org
+
+currently logged in as :: bandit25 
+
+simple sshkey login....
+if we try to login in bandit26 using ssh.key it shutsdown the connection,
+to find which kind of shell bandit26 is using from bandit25 try to cat /etc/passwd this
+file contain info about the passwords and shells used by account. head to john hammond 
+yt videos, now 
+
+we get a directory /usr/bin/showtext which involves use of "more"
+just make ur termnal window so small that the more buffer is filled with it and is invo-
+-ked, 
+then invoke vim from man and read file /etc/bandit_pass/bandit26
+restore window and done pass will be there.
+
+DO IT URSELF
+
+username --> bandit26 
+password --> 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
