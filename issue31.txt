@@ -1,0 +1,11 @@
+ISSUE31 BANDIT OVERTHEWIRE.org
+
+current :: bandit30 
+
+clone the repo 
+this time README.md doesn't contain anything so.... there exist a hidden file .git cont-
+-aining "things" the password isn't in any dir. checkout packed ref and again do same 
+git log git show and donzo
+
+username --> bandit31
+password --> 47e603bb428404d265f59c42920d81e5
