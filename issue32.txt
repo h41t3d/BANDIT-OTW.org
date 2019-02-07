@@ -1,0 +1,10 @@
+ISSUE32 BANDIT OVERTHEWIRE.org
+
+current :: bandit31
+
+clone the repo 
+make a file key.txt and git add key.txt -f {force} coz .gitignore ignores the file *.txt
+then git commit and write something and git push.....
+
+username --> bandit32
+password --> 56a9bf19c63d650ce78e6ec0354ee45e
