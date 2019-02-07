@@ -1,0 +1,11 @@
+ISSUE0 BANDIT OVERTHEWIRE.org 
+
+these solutions are minimal, although password is given and is given because if u copy 
+it u learn freaking nothing... just do the stuff, following solutions isnt bad as long 
+as u are gettting ur hands dirty..
+
+sudo ./do_it_yourself --force
+
+
+username --> bandit0
+password --> bandit0
