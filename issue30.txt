@@ -1,0 +1,10 @@
+ISSUE30 BANDIT OVERTHEWIRE.org 
+
+currently logged in as :: bandit29
+
+when we clone only master branch clones in to dir. "checkout" other branches with git 
+branch -a and go through the logs and show sha1 hashes.
+
+
+username --> bandit30
+password --> 5b90576bedb2cc04c86a9e924ce42faf
