@@ -1,0 +1,9 @@
+ISSUE33 BANDIT OVERTHEWIRE.org
+
+current :: bandit32
+
+we only gets a uppercase shell os... uppercase is only for alphabets so lets try to fed 
+in numbers and $0 gives the name of the script {#!/bin/bash} we got shell. donzo
+
+username --> bandit33
+password --> c9c3199ddf4121b10cf581a98d51caee
